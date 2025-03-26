@@ -1,0 +1,247 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Color Palette */
+:root {
+    --primary-blue: #1C5D99;
+    --secondary-blue: #639FAB;
+    --light-blue: #B5D6E6;
+    --text-color: #333;
+    --background-color: #f4f7f9;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--light-blue);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    color: white;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--light-blue);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-blue);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+/* Sections */
+section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+section:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+section h3 {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Serviços */
+.servico-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.servico-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 45%;
+    transition: transform 0.3s ease;
+}
+
+.servico-item:hover {
+    transform: translateY(-10px);
+}
+
+.servico-item h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+/* Processo */
+.processo ol {
+    max-width: 600px;
+    margin: 0 auto;
+    counter-reset: item;
+    list-style-type: none;
+}
+
+.processo ol li {
+    counter-increment: item;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 50px;
+}
+
+.processo ol li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--primary-blue);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Contato */
+.contato {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.contato-info {
+    text-align: center;
+}
+
+.contato-info a {
+    color: var(--light-blue);
+    text-decoration: none;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-links a {
+    color: var(--light-blue);
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+
+    .servico-grid {
+        flex-direction: column;
+    }
+
+    .servico-item {
+        width: 100%;
+    }
+}
